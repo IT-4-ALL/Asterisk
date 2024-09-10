@@ -50,10 +50,12 @@ sudo chown -R asterisk:asterisk /etc/asterisk
 sudo chown -R asterisk:asterisk /var/{lib,log,spool}/asterisk
 sudo chown -R asterisk:asterisk /usr/lib/asterisk
 
-sudo nano /etc/default/asterisk
 
-sudo AST_USER="asterisk"
-sudo AST_GROUP="asterisk"
+
+AST_USER="asterisk"
+AST_GROUP="asterisk"
+
+sudo sh -c 'echo "AST_USER=\"asterisk\"\nAST_GROUP=\"asterisk\"" >> /etc/default/asterisk'
 
 # Path to Asterisk configuration file
 ASTERISK_CONF="/etc/asterisk/asterisk.conf"
